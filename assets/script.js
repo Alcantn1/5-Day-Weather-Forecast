@@ -1,20 +1,39 @@
-const searchBtn= document.querySelector('.searchBtn');
-const forecastContainer = document.querySelector('.forecast-container');
+const forecast = document.querySelector('.forecast');
 const APIkey = "8e429daa5b2c1b82a6e187f2f61c7f05"
 const searchHistory = [];
+const city ='sacramento';
 
-// Event listener for search button
-searchBtn.addEventListener('click', function(){
-const city = "sacramento";
-const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
+function getApi(city, APIkey) {
+    const queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
+    fetch(queryURL)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            displayweather(data);
+            console.log(data);
+        });
+}
+function getforecast(city, APIkey) {
+    const queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIkey;
+    fetch(queryURL)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+        });
+}
 
-fetch(queryURL)
-.then(Response => Response.json())
-.then(data => {
-    console.log('data');
-})
-    .catch(error => console.error(error));
+
+const searchBtn = document.getElementById('searchBtn');
+
+searchBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    getApi(city, APIkey);
+    getforecast(city, APIkey);
 });
+
 
 // forecast days
 const today = dayjs();
@@ -25,9 +44,5 @@ console.log(forecastDays);
 
 
 
-// curl "https://api.openweathermap.org/data/2.5/weather?q=Sacramento&appid=8e429daa5b2c1b82a6e187f2f61c7f05"
 
 
-// const city = "sacramento";
-// const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
-// fetch(queryURL);
