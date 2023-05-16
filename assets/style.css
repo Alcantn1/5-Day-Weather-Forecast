@@ -1,0 +1,20 @@
+img{
+    background-size: cover;
+    height:20vh;
+    /* 45vh */
+}
+.container-1{
+    width: 40vw;
+}
+.forecast {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .forecast-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-style: solid;
+  }
