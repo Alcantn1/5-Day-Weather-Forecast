@@ -14,7 +14,7 @@ function getApi(city, APIkey) {
             console.log(data);
         });
 }
-function getforecast(city, APIkey) {
+function getForecast(city, APIkey) {
     const queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIkey;
     fetch(queryURL)
         .then(function(response) {
@@ -23,6 +23,28 @@ function getforecast(city, APIkey) {
         .then(function(data) {
             console.log(data);
         });
+}
+
+function displayweather(data) {
+const forecastContainer = document.querySelector('forecastContainer');
+const city = document.createElement('h3');
+cityName.textContent = data.name;
+
+const temperature = document.createElement('p');
+temperature.textContent = `temperature: ${data.main.temp}`;
+
+const humidity =document.createElement('p');
+humidity.textContent = `humidity: ${data.main.humidity}%`;
+
+const windSpeed = document.createElement('p');
+windSpeed.textContent = `windSpeed: ${data.wind.speed}m/s`;
+
+forecastContainer.appendChild(city);
+forecastContainer.appendChild(temperature);
+forecastContainer.appendChild(humidity);
+forecastContainer.appendChild(windSpeed);
+
+
 }
 
 

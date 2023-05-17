@@ -1,7 +1,6 @@
 img{
     background-size: cover;
     height:20vh;
-    /* 45vh */
 }
 .container-1{
     width: 40vw;
@@ -12,7 +11,7 @@ img{
     margin: 0 auto;
     text-align: center;
   }
-  .forecast-container {
+  .forecastContainer {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
