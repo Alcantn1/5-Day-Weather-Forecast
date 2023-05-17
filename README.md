@@ -11,6 +11,8 @@ No installation required.
 ## Usage
 To use this site, all you need to do is open the web browser, enter the URL to deploy the website and to enter the name of the city you would like to view the weather for and hit the search button and the forecast for the next 5 days will appear.
 
+## Screenshot
+![screenshot of site](assets/weatherDashboard.png)
 
 ## Credits
 
